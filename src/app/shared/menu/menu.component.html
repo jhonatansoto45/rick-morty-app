@@ -1,0 +1,25 @@
+<aside class="aside">
+  <picture>
+    <img src="../../../assets/logo2.png" alt="logo" class="aside__img" />
+    <img src="../../../assets/logo.png" alt="logo" class="aside__img" />
+  </picture>
+
+  <ul class="aside__ul">
+    <div
+      class="aside__item"
+      *ngFor="let link of links"
+      [routerLink]="[link.ruta]"
+    >
+      <span class="material-symbols-outlined"> {{ link.icono }} </span>
+      <li>{{ link.nombre }}</li>
+    </div>
+  </ul>
+  <hr />
+  <div class="change__theme">
+    <p>Cambiar tema</p>
+    <label class="switch">
+      <input type="checkbox" />
+      <span class="slider"></span>
+    </label>
+  </div>
+</aside>

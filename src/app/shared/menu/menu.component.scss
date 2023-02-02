@@ -1,0 +1,136 @@
+.aside {
+  height: 100vh;
+  width: 77px;
+  padding: 20px;
+  background-color: whitesmoke;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  position: fixed;
+}
+
+.aside:hover {
+  width: 244px;
+
+  .aside__ul .aside__item li {
+    transition: 0.5s ease-in-out;
+  }
+}
+
+.aside__img {
+  width: 48px;
+}
+
+picture {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+
+  img:nth-child(2) {
+    width: 120px;
+  }
+}
+
+.aside__ul {
+  height: 84%;
+}
+
+.aside__item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+  cursor: pointer;
+
+  span {
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: 300;
+  }
+
+  li {
+    list-style: none;
+    font-weight: 600;
+  }
+}
+
+.change__theme {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    white-space: nowrap;
+    font-weight: 600;
+  }
+}
+
+hr {
+  margin-bottom: 15px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  border: 1px solid #adb5bd;
+  transition: 0.4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 20px;
+  left: 0.27em;
+  bottom: 0.25em;
+  background-color: #adb5bd;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #67C11A;
+  border: 1px solid #67C11A;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #67C11A;
+}
+
+input:checked + .slider:before {
+  transform: translateX(1.4em);
+  background-color: #fff;
+}
+
+
+.aside:not(:hover) {
+  .aside__ul .aside__item li,
+  .change__theme,
+  picture img:nth-child(2),
+  hr {
+    display: none;
+  }
+}
