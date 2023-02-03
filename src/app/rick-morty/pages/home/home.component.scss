@@ -1,18 +1,6 @@
-header {
-  background-image: linear-gradient(#000421cc, #000421a1),
-    url(../../../../assets/images/banner.jpg);
-  background-position: center;
-  background-size: cover;
-  height: 520px;
+.section {
+  min-height: 700px;
   position: relative;
-
-  h1 {
-    text-align: center;
-    color: var(--bg);
-    font-size: 6rem;
-    font-weight: 900;
-    line-height: 300px;
-  }
 
   svg {
     position: absolute;
@@ -20,7 +8,28 @@ header {
   }
 }
 
-.container {
-  width: 90%;
+.section__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 7rem;
+  color: var(--color);
+  font-weight: 900;
+  width: 70%;
   margin: 0 auto;
+  padding-top: 15px;
+  transition: 0.3s ease-in;
+  animation-name: title;
+  animation-duration: 4s;
+}
+@keyframes title {
+  0% {
+    opacity: 0.1;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

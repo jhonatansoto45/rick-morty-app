@@ -4,7 +4,8 @@
   align-items: center;
   border-radius: 15px;
   padding: 15px;
-  margin: 15px 35px;
+  margin: 0 35px;
+  background-color: var(--background);
 
   .header__img {
     width: 320px;
@@ -30,8 +31,15 @@
       color: var(--background);
     }
   }
-}
 
+  .header__serie{
+    background-color: transparent;
+
+    .serie__img{
+      width: 100px;
+    }
+  }
+}
 
 .aside {
   position: fixed;

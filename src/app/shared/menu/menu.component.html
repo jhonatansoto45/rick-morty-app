@@ -5,7 +5,9 @@
     </span>
   </button>
   <img src="../../../assets/logo.png" alt="logo" class="header__img" />
-  <button class="header__serie">Ver serie</button>
+  <a href="https://www.hbomax.com/co/es/series/urn:hbo:series:GXkRjxwjR68PDwwEAABKJ" target="_blank" class="header__serie">
+    <img src="../../../assets/hbo.png" alt="" class="serie__img" />
+  </a>
 </header>
 
 <aside class="aside" [ngClass]="{ visible: isOpen }">
@@ -14,6 +16,7 @@
   </picture>
 
   <ul class="aside__ul">
+    <hr />
     <div
       class="aside__item"
       *ngFor="let link of links"

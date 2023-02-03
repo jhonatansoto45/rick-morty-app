@@ -1,10 +1,12 @@
-/* .container {
-  display: grid;
-  grid-template-columns: 100px, 100%;
-}
- */
-
 .container {
   width: 100%;
-  margin: 15px auto;
+/*   margin: 15px auto; */
 }
+
+.container > .child {
+  background-color: var(--background) ;
+}
+
+/* .container :nth-child(2) {
+  margin-top: 30px;
+} */
