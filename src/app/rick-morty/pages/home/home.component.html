@@ -61,7 +61,11 @@
         class="card__person"
       />
     </article>
-    <img src="../../../../assets/rickmorty2.png" alt="Rick and Morty" class="creador__img">
+    <img
+      src="../../../../assets/rickmorty2.png"
+      alt="Rick and Morty"
+      class="creador__img"
+    />
     <article class="creador__card">
       <div class="card__content">
         <h3 class="card__name">Dan Harmon</h3>
@@ -84,4 +88,22 @@
   </div>
 </section>
 
-<hr />
+<section class="premios">
+  <h1 class="premios__title">Ganadores de premios</h1>
+  <table class="premios__table">
+    <thead>
+      <tr>
+        <th>Año</th>
+        <th>Premiación</th>
+        <th>Categoría</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let premio of listPremios">
+        <td [ngStyle]="{'width.px': '70'}" >{{ premio.anio }}</td>
+        <td>{{ premio.premio }}</td>
+        <td>{{ premio.categoria }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
