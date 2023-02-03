@@ -17,8 +17,6 @@
     border-radius: 50px;
     cursor: pointer;
     border: none;
-    background-color: transparent;
-    z-index: 9999;
     background-color: var(--color);
     padding: 6px;
     border-radius: 0 15px 0 15px;
@@ -30,10 +28,10 @@
     }
   }
 
-  .header__serie{
+  .header__serie {
     background-color: transparent;
 
-    .serie__img{
+    .serie__img {
       width: 100px;
     }
   }
@@ -57,6 +55,34 @@
   transform: translateX(0%);
 }
 
+.aside__button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  h1 {
+    text-align: center;
+  }
+
+  .aside__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--background);
+    padding: 6px;
+    border-radius: 0 15px 0 15px;
+    cursor: pointer;
+
+    span {
+      font-size: 1rem;
+      font-weight: 900;
+      color: var(--color);
+    }
+  }
+}
+
 picture {
   display: flex;
   justify-content: flex-end;
@@ -67,7 +93,7 @@ picture {
 }
 
 .aside__ul {
-  height: 75%;
+  height: 68%;
   margin-top: 22px;
 }
 

@@ -1,8 +1,6 @@
 <header class="header">
   <button class="header__menu" (click)="toggle()">
-    <span class="material-symbols-outlined">
-      {{ !isOpen ? "menu" : "close" }}
-    </span>
+    <span class="material-symbols-outlined"> menu </span>
   </button>
   <img src="../../../assets/logo.png" alt="logo" class="header__img" />
   <a
@@ -20,15 +18,20 @@
 </header>
 
 <aside class="aside" [ngClass]="{ visible: isOpen }">
-  <picture class="aside__picture">
-    <img
-      src="../../../assets/logo2.png"
-      loading="lazy"
-      alt="logo"
-      class="aside__img"
-    />
-  </picture>
-
+  <div class="aside__button">
+    <picture class="aside__picture">
+      <img
+        src="../../../assets/logo2.png"
+        loading="lazy"
+        alt="logo"
+        class="aside__img"
+      />
+    </picture>
+    <h1>Welcome Bienvenido</h1>
+    <button class="aside__close" (click)="toggle()">
+      <span class="material-symbols-outlined"> close </span>
+    </button>
+  </div>
   <ul class="aside__ul">
     <hr />
     <div
