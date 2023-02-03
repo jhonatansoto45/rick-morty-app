@@ -1,7 +1,16 @@
-<aside class="aside">
-  <picture>
+<header class="header">
+  <button class="header__menu" (click)="toggle()">
+    <span class="material-symbols-outlined">
+      {{ !isOpen ? "menu" : "close" }}
+    </span>
+  </button>
+  <img src="../../../assets/logo.png" alt="logo" class="header__img" />
+  <button class="header__serie">Ver serie</button>
+</header>
+
+<aside class="aside" [ngClass]="{ visible: isOpen }">
+  <picture class="aside__picture">
     <img src="../../../assets/logo2.png" alt="logo" class="aside__img" />
-    <img src="../../../assets/logo.png" alt="logo" class="aside__img" />
   </picture>
 
   <ul class="aside__ul">

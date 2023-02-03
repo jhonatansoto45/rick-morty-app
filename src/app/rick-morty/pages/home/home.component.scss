@@ -1,0 +1,26 @@
+header {
+  background-image: linear-gradient(#000421cc, #000421a1),
+    url(../../../../assets/images/banner.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 520px;
+  position: relative;
+
+  h1 {
+    text-align: center;
+    color: var(--bg);
+    font-size: 6rem;
+    font-weight: 900;
+    line-height: 300px;
+  }
+
+  svg {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}

@@ -8,11 +8,12 @@
 }
 
 :root {
-  --bg: #e8e8e8;
+  --background: #121440;
+  --color: #e8e8e8;
   --theme-dark: #212121;
 }
 
 body {
-  background-color: var(--bg);
+  background-color: var(--background);
   font-family: "Inter", sans-serif;
 }

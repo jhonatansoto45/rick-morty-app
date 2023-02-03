@@ -34,4 +34,10 @@ export class MenuComponent {
       ruta: './rick-morty/episodeos',
     },
   ];
+
+  isOpen: boolean = false;
+
+  toggle(): void {
+    this.isOpen = !this.isOpen;
+  }
 }
