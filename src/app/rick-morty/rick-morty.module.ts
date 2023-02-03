@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { PersonajesComponent } from './pages/personajes/personajes.component';
 import { LocacionesComponent } from './pages/locaciones/locaciones.component';
 import { EpisodeosComponent } from './pages/episodeos/episodeos.component';
+import { ImagenPipe } from './pipes/imagen.pipe';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { EpisodeosComponent } from './pages/episodeos/episodeos.component';
     HomeComponent,
     PersonajesComponent,
     LocacionesComponent,
-    EpisodeosComponent
+    EpisodeosComponent,
+    ImagenPipe
   ],
   imports: [
     CommonModule,

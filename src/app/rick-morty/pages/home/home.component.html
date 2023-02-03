@@ -9,4 +9,79 @@
   </svg>
 </section>
 
+<section class="creadores">
+  <div class="creador__containt" *ngFor="let imagen of listPartnes">
+    <img
+      [src]="imagen.nombre | imagen"
+      [alt]="imagen.alt"
+      class="creadores__img"
+    />
+  </div>
+</section>
 
+<section class="info">
+  <img
+    src="../../../../assets/rickmorty1.png"
+    alt="Rick"
+    class="info__characters"
+  />
+  <div class="info__content">
+    <h1 class="info__title">Rick y Morty</h1>
+    <p class="info__description">
+      Rick y Morty (en inglés: Rick and Morty) es una serie de televisión
+      americana de animación para adultos creada por Justin Roiland y Dan Harmon
+      en 2013 para Adult Swim, también se emitió en Cartoon Network. La serie
+      sigue las desventuras de un científico, Rick Sanchez, y su fácilmente
+      influenciable nieto, Morty, quienes pasan el tiempo entre la vida
+      doméstica y los viajes espaciales, temporales e intergalácticos.
+    </p>
+  </div>
+</section>
+
+<hr />
+
+<section class="creador">
+  <h1 class="creador__title">Creadores del programa</h1>
+  <div class="creador__contain">
+    <article class="creador__card">
+      <div class="card__content">
+        <h3 class="card__name">Mark Justin Roiland</h3>
+        <p class="card__info">
+          Es un animador, actor de doblaje, escritor, productor y director
+          estadounidense. Es el co-creador de la comedia de situación animada
+          Rick and Morty de Adult Swim, en la que prestó su voz a los
+          protagonistas Rick Sanchez y Morty Smith hasta que la cadena rompió
+          los lazos con él por cargos de abuso doméstico en 2023.
+        </p>
+      </div>
+      <div class="card__bg"></div>
+      <img
+        src="../../../../assets/creator/justin.png"
+        alt=""
+        class="card__person"
+      />
+    </article>
+    <img src="../../../../assets/rickmorty2.png" alt="Rick and Morty" class="creador__img">
+    <article class="creador__card">
+      <div class="card__content">
+        <h3 class="card__name">Dan Harmon</h3>
+        <p class="card__info">
+          Daniel "Dan" Harmon (Milwaukee, 3 de enero de 1973) es un guionista y
+          animador estadounidense. Reconocido por crear y producir la serie
+          cómica Community de la cadena NBC. Además, co-creó la serie animada de
+          Adult Swim Rick and Morty, y co-fundó el sitio web de televisión
+          Channel 101. Harmon publicó el libro You'll Be Perfect When You're
+          Dead en 2013.
+        </p>
+      </div>
+      <div class="card__bg"></div>
+      <img
+        src="../../../../assets/creator/dan.png"
+        alt=""
+        class="card__person"
+      />
+    </article>
+  </div>
+</section>
+
+<hr />

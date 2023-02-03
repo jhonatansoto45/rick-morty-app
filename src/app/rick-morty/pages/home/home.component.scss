@@ -1,10 +1,13 @@
 .section {
   min-height: 700px;
   position: relative;
+  background-color: var(--background);
 
   svg {
+    height: 100%;
     position: absolute;
-    bottom: 0;
+    bottom: -140px;
+    max-width: 100%;
   }
 }
 
@@ -18,11 +21,13 @@
   font-weight: 900;
   width: 70%;
   margin: 0 auto;
-  padding-top: 15px;
+  height: 100%;
+  padding-top: 80px;
   transition: 0.3s ease-in;
   animation-name: title;
   animation-duration: 4s;
 }
+
 @keyframes title {
   0% {
     opacity: 0.1;
@@ -33,3 +38,151 @@
     opacity: 1;
   }
 }
+
+.creadores {
+  width: 70%;
+  margin: 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 45px;
+
+  .creador__containt {
+    width: 300px;
+  }
+
+  .creadores__img {
+    width: 100%;
+    opacity: 0.5;
+    cursor: pointer;
+  }
+
+  .creador__containt:hover {
+    .creadores__img {
+      opacity: 1;
+    }
+  }
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+
+  .info__title {
+    text-align: center;
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: var(--background);
+    margin-bottom: 30px;
+  }
+
+  .info__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .info__characters {
+    width: 800px;
+    filter: drop-shadow(5px 5px 5px #40b5cb);
+  }
+
+  .info__description {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--background);
+    width: 90%;
+  }
+}
+
+hr {
+  width: 90%;
+  margin: auto;
+  opacity: .4;
+}
+
+.creador__contain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.creador {
+  width: 90%;
+  margin: auto;
+  min-height: 1000px;
+
+  .creador__title {
+    text-align: center;
+    font-size: 4rem;
+    color: var(--background);
+    margin: 25px 0 130px;
+  }
+}
+
+.creador__img{
+  width: 300px;
+  filter: drop-shadow(5px 5px 5px #67c11a);
+}
+
+//* CARDS
+
+.creador__card {
+  position: relative;
+}
+
+.card__bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  background-image: url(../../../../assets/logo.png);
+  background-position: center;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+}
+
+.creador__card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 0.5rem;
+  padding: 35px;
+  width: 750px;
+  height: 290px;
+  background-color: var(--background);
+
+  .card__content {
+    position: absolute;
+    z-index: 1;
+  }
+
+  .card__name {
+    font-size: 2rem;
+    color: var(--color);
+    font-weight: 900;
+    white-space: pre-wrap;
+  }
+
+  .card__info {
+    width: 47%;
+    color: var(--color);
+    font-weight: 600;
+  }
+
+  .card__person {
+    position: absolute;
+    right: -5rem;
+    bottom: 0;
+    width: 36rem;
+  }
+}
+
