@@ -93,7 +93,7 @@ picture {
 }
 
 .aside__ul {
-  height: 68%;
+  height: 60%;
   margin-top: 22px;
 }
 
@@ -106,13 +106,14 @@ picture {
 
   span {
     display: inline-block;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 300;
   }
 
   li {
     list-style: none;
     font-weight: 600;
+    font-size: 0.9rem;
   }
 }
 
@@ -124,6 +125,7 @@ picture {
   p {
     white-space: nowrap;
     font-weight: 600;
+    font-size: 0.9rem;
   }
 }
 

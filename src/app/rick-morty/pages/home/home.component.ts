@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  ImagenPhoto,
-  TablaPremiacion,
-} from '../../interface/rickmorty.interface';
+import { RickMortyService } from 'src/app/service/rick-morty.service';
+import { ListadosService } from '../../services/listados.service';
 
 @Component({
   selector: 'app-home',
@@ -11,64 +9,22 @@ import {
   animations: [],
 })
 export class HomeComponent implements OnInit {
-  listPartnes: ImagenPhoto[] = [
-    {
-      nombre: 'hbo1',
-      alt: 'HBO',
-    },
-    {
-      nombre: 'cartoon',
-      alt: 'Cartoon Network',
-    },
-  ];
+  constructor(
+    private rmService: RickMortyService,
+    private listados: ListadosService
+  ) {}
 
-  listPremios: TablaPremiacion[] = [
-    {
-      anio: 2015,
-      premio: 'BTVA Voice Acting Awards',
-      categoria:
-        'Best Male Lead Vocal Performance in a Television Series — Comedy/Musical',
-    },
-    {
-      anio: 2015,
-      premio: 'IGN Awards',
-      categoria: 'Best Animated Series',
-    },
-    {
-      anio: 2015,
-      premio: "IGN People's Choice Award",
-      categoria: 'Best Animated Series',
-    },
-    {
-      anio: 2017,
-      premio: 'IGN Awards',
-      categoria: 'Best Animated Series',
-    },
-    {
-      anio: 2017,
-      premio: 'IGN Awards',
-      categoria: 'Best Comedic TV Performance',
-    },
-    {
-      anio: 2018,
-      premio: "Critics' Choice Television Awards",
-      categoria: 'Best Animated Series',
-    },
-    {
-      anio: 2018,
-      premio: 'Annie Awards',
-      categoria:
-        'Best General Audience Animated Television/Broadcast Production',
-    },
-    {
-      anio: 2018,
-      premio: 'Annie Awards',
-      categoria:
-        'Outstanding Achievement for Writing in an Animated Television/Broadcast Production',
-    },
-  ];
+  ngOnInit(): void {
+    this.rmService.validateAside();
+  }
 
-  constructor() {}
+  get listPremios() {
+    return [...this.listados.listPremios];
+  }
 
-  ngOnInit(): void {}
+  get listPartnes() {
+    return [...this.listados.listPartnes];
+  }
+
+  dataPersonajes(): void {}
 }

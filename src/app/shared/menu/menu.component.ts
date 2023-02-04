@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { RickMortyService } from '../../service/rick-morty.service';
 
 interface MenuItem {
   nombre: string;
@@ -35,9 +36,15 @@ export class MenuComponent {
     },
   ];
 
-  isOpen: boolean = false;
+  constructor(private rickMortyService: RickMortyService) {}
 
   toggle(): void {
-    this.isOpen = !this.isOpen;
+    this.asideActive
+      ? this.rickMortyService.disableAside()
+      : this.rickMortyService.isOpenAside$.next(true);
+  }
+
+  get asideActive(): boolean {
+    return this.rickMortyService.isOpenAside$.getValue();
   }
 }

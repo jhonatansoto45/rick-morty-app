@@ -6,7 +6,7 @@
   svg {
     height: 100%;
     position: absolute;
-    bottom: -140px;
+    bottom: -184px;
     max-width: 100%;
   }
 }
@@ -107,9 +107,11 @@ hr {
 
 .creador__contain {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   margin-bottom: 150px;
+  gap: 45px;
 }
 
 .creador {
@@ -156,7 +158,7 @@ hr {
   align-items: center;
   border-radius: 0.5rem;
   padding: 35px;
-  width: 750px;
+  width: 800px;
   height: 290px;
   background-color: var(--background);
 
@@ -202,16 +204,23 @@ hr {
     width: 50%;
     margin: 70px auto;
     color: var(--background);
-    border-radius: 8px;
     height: 530px;
+    border-collapse: collapse;
+    border-radius: 1em;
+    overflow: hidden;
 
-    thead tr {
-      border: 2px solid var(--color);
-      height: 40px;
-      background-color: var(--color);
+    th,
+    td {
+      border-bottom: 2px solid white;
     }
 
+    thead tr,
     tbody tr {
+      background-color: var(--background);
+    }
+
+    thead tr th,
+    tbody tr td {
       background-color: var(--color);
     }
 
@@ -219,7 +228,6 @@ hr {
     tbody tr td {
       text-align: start;
       padding: 15px;
-      border-radius: 8px;
       margin: 0 15px;
     }
   }
