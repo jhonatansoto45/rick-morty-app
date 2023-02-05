@@ -3,10 +3,23 @@
   margin: 30px auto 40px;
 }
 
+.filter__child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  width: 50%;
+  margin: 0 auto;
+}
+
 .filter__title {
   text-align: center;
   font-size: 900;
   font-size: 3em;
+}
+
+.filter__opt {
+  flex: 1 1 auto;
 }
 
 .group {
@@ -16,7 +29,9 @@
   align-items: center;
   position: relative;
   max-width: 500px;
+  width: 100%;
   margin: 25px auto;
+  flex: 1 1 auto;
 }
 
 .input {
@@ -85,6 +100,7 @@ input:hover {
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  cursor: pointer;
 }
 
 .flip-card:hover .flip-card-inner {
