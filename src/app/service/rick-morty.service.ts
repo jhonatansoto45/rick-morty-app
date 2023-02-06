@@ -44,6 +44,10 @@ export class RickMortyService {
     );
   }
 
+  getCharacterById(id: string): Observable<Result> {
+    return this.http.get<Result>(`${this.baseUrl}`);
+  }
+
   guardarSessionStorageCharacters(): void {
     sessionStorage.setItem('characters', JSON.stringify(this.dataCharacters));
   }

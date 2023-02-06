@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { RickMortyRoutingModule } from './rick-morty-routing.module';
 import { HomeComponent } from './pages/home/home.component';
@@ -10,7 +11,6 @@ import { ImagenPipe } from './pipes/imagen.pipe';
 import { DetallePersonajeComponent } from './components/detalle-personaje/detalle-personaje.component';
 import { EstadoPipe } from './pipes/estado.pipe';
 
-
 @NgModule({
   declarations: [
     HomeComponent,
@@ -19,11 +19,8 @@ import { EstadoPipe } from './pipes/estado.pipe';
     EpisodeosComponent,
     ImagenPipe,
     DetallePersonajeComponent,
-    EstadoPipe
+    EstadoPipe,
   ],
-  imports: [
-    CommonModule,
-    RickMortyRoutingModule,
-  ]
+  imports: [CommonModule, RickMortyRoutingModule, FormsModule],
 })
-export class RickMortyModule { }
+export class RickMortyModule {}

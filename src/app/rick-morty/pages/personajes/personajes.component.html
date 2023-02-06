@@ -10,7 +10,13 @@
             ></path>
           </g>
         </svg>
-        <input placeholder="Search" type="search" class="input" />
+        <input
+          #input
+          placeholder="Search"
+          type="search"
+          class="input"
+          (input)="searchCharacter(input.value)"
+        />
       </div>
       <div class="filter__opt">
         <button class="filter__button" (click)="viewFilter()">
@@ -23,23 +29,55 @@
         >
           <ul class="filter__list">
             <li class="filter__item">
-              <input id="f1" type="checkbox" checked />
+              <input
+                #check1
+                class="filter__check"
+                id="f1"
+                type="checkbox"
+                checked
+                (click)="changeChecked(check1.checked, 'name')"
+              />
               <label for="f1">Nombre</label>
             </li>
             <li class="filter__item">
-              <input id="f2" type="checkbox" />
+              <input
+                #check2
+                class="filter__check"
+                id="f2"
+                type="checkbox"
+                (click)="changeChecked(check2.checked, 'status')"
+              />
               <label for="f2">Estado</label>
             </li>
             <li class="filter__item">
-              <input id="f3" type="checkbox" />
+              <input
+                #check3
+                class="filter__check"
+                id="f3"
+                type="checkbox"
+                (click)="changeChecked(check3.checked, 'specie')"
+              />
               <label for="f3">Especie</label>
             </li>
             <li class="filter__item">
-              <input id="f4" type="checkbox" />
+              <input
+                #check4
+                class="filter__check"
+                id="f4"
+                type="checkbox"
+                [(ngModel)]="model.mdType"
+                (click)="changeChecked(check4.checked, 'type')"
+              />
               <label for="f4">Tipo</label>
             </li>
             <li class="filter__item">
-              <input id="f5" type="checkbox" />
+              <input
+                #check5
+                class="filter__check"
+                id="f5"
+                type="checkbox"
+                (click)="changeChecked(check5.checked, 'gender')"
+              />
               <label for="f5">Genero</label>
             </li>
           </ul>
