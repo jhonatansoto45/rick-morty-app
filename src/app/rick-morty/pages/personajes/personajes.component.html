@@ -17,7 +17,11 @@
 
 <section class="cards">
   <div class="flip-card" *ngFor="let item of cards; let i = index">
-    <div class="flip-card-inner" (click)="detallePersonaje(i)">
+    <div
+      class="flip-card-inner"
+      [title]="item.name"
+      (click)="detallePersonaje(i)"
+    >
       <div class="flip-card-front">
         <img
           [src]="item.image"
@@ -29,6 +33,7 @@
       <div class="flip-card-back">
         <p class="title">{{ item.name }}</p>
         <p>{{ item.species }}</p>
+        <p>{{ item.status | estado }}</p>
       </div>
     </div>
   </div>

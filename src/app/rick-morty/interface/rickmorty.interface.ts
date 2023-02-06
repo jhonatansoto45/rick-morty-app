@@ -51,6 +51,7 @@ export interface Location {
 export enum Species {
   Alien = 'Alien',
   Human = 'Human',
+  Unknown = 'unknown',
 }
 
 export enum Status {

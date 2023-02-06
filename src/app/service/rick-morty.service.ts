@@ -20,6 +20,10 @@ export class RickMortyService {
 
   constructor(private http: HttpClient) {}
 
+  get getSessionStorageCharacters() {
+    return JSON.parse(sessionStorage.getItem('characters')!);
+  }
+
   validateAside(): void {
     if (this.isOpenAside$.getValue()) {
       this.disableAside();
@@ -31,8 +35,16 @@ export class RickMortyService {
   }
 
   getCharacters(): Observable<Result[]> {
-    return this.http
-      .get<Personajes>(`${this.baseUrl}/character`)
-      .pipe(map((data) => data.results));
+    return this.http.get<Personajes>(`${this.baseUrl}/character`).pipe(
+      map((data) => {
+        this.dataCharacters = data.results;
+        this.guardarSessionStorageCharacters();
+        return data.results;
+      })
+    );
+  }
+
+  guardarSessionStorageCharacters(): void {
+    sessionStorage.setItem('characters', JSON.stringify(this.dataCharacters));
   }
 }

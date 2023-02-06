@@ -8,6 +8,7 @@ import { LocacionesComponent } from './pages/locaciones/locaciones.component';
 import { EpisodeosComponent } from './pages/episodeos/episodeos.component';
 import { ImagenPipe } from './pipes/imagen.pipe';
 import { DetallePersonajeComponent } from './components/detalle-personaje/detalle-personaje.component';
+import { EstadoPipe } from './pipes/estado.pipe';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { DetallePersonajeComponent } from './components/detalle-personaje/detall
     LocacionesComponent,
     EpisodeosComponent,
     ImagenPipe,
-    DetallePersonajeComponent
+    DetallePersonajeComponent,
+    EstadoPipe
   ],
   imports: [
     CommonModule,

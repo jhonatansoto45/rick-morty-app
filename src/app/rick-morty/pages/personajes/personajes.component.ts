@@ -16,10 +16,7 @@ export class PersonajesComponent implements OnInit {
   ngOnInit(): void {
     this.rmService.validateAside();
 
-    this.rmService.getCharacters().subscribe((data) => {
-      this.cards = data;
-      this.rmService.dataCharacters = data;
-    });
+    this.rmService.getCharacters().subscribe((data) => (this.cards = data));
   }
 
   get aside(): boolean {
@@ -27,7 +24,6 @@ export class PersonajesComponent implements OnInit {
   }
 
   detallePersonaje(index: number): void {
-    console.log('clicked personaje');
     this.router.navigate(['/rick-morty/detalle/', index]);
   }
 }
