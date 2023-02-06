@@ -10,6 +10,7 @@ import { EpisodeosComponent } from './pages/episodeos/episodeos.component';
 import { ImagenPipe } from './pipes/imagen.pipe';
 import { DetallePersonajeComponent } from './components/detalle-personaje/detalle-personaje.component';
 import { EstadoPipe } from './pipes/estado.pipe';
+import { GeneroPipe } from './pipes/genero.pipe';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { EstadoPipe } from './pipes/estado.pipe';
     ImagenPipe,
     DetallePersonajeComponent,
     EstadoPipe,
+    GeneroPipe,
   ],
   imports: [CommonModule, RickMortyRoutingModule, FormsModule],
 })

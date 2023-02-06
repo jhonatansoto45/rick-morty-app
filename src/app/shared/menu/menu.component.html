@@ -2,7 +2,9 @@
   <button class="header__menu" (click)="toggle()">
     <span class="material-symbols-outlined"> menu </span>
   </button>
-  <img src="../../../assets/logo.png" alt="logo" class="header__img" />
+  <a [routerLink]="links[0].ruta">
+    <img src="../../../assets/logo.png" alt="logo" class="header__img" />
+  </a>
   <a
     href="https://www.hbomax.com/co/es/series/urn:hbo:series:GXkRjxwjR68PDwwEAABKJ"
     target="_blank"
