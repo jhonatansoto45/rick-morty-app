@@ -14,12 +14,13 @@ export class PersonajesComponent implements OnInit {
 
   showFilter: boolean = false;
   filterMsg: string = '';
+  busqueda: string = '';
 
   model: PersonajesModel = PersonajesModel.getInstance();
 
   constructor(private rmService: RickMortyService, private router: Router) {
     this.clickedFueraFiltro();
-    this.changeChecked(true, 'name');
+    this.changeChecked('name');
   }
 
   ngOnInit(): void {
@@ -40,24 +41,47 @@ export class PersonajesComponent implements OnInit {
     return this.rmService.getSessionStorageCharacters;
   }
 
-  searchCharacter(value: string): void {
-    console.log(value);
-    console.log(this.filterMsg.split(','));
+  get placeholder(): string {
+    let msg: string = 'Buscar por ';
+    switch (this.filterMsg) {
+      case 'name':
+        msg = msg.concat('nombre');
+        break;
+      case 'status':
+        msg = msg.concat('estado');
+        break;
+      case 'specie':
+        msg = msg.concat('especie');
+        break;
+      case 'type':
+        msg = msg.concat('tipo');
+        break;
+      case 'gender':
+        msg = msg.concat('genero');
+        break;
+    }
+
+    return msg.trim();
+  }
+
+  searchCharacter(): void {
+    this.rmService
+      .getCharacterById(this.filterMsg, this.busqueda)
+      .subscribe((data) => {
+        this.cards = data;
+      });
   }
 
   viewFilter(): void {
     this.showFilter = !this.showFilter;
   }
 
-  changeChecked(value: boolean, field: string): void {
-    if (!value) {
-      this.filterMsg = this.filterMsg.includes(field)
-        ? this.filterMsg.replace(`${field},`, '')
-        : '';
-      return;
-    }
+  changeChecked(field: string): void {
+    if (this.busqueda.length) this.cards = this.dataSession;
 
-    this.filterMsg = this.filterMsg.concat(`${field},`);
+    this.filterMsg = '';
+    this.busqueda = '';
+    this.filterMsg = field;
   }
 
   detallePersonaje(index: number): void {
