@@ -36,7 +36,9 @@ export class MenuComponent {
     },
   ];
 
-  constructor(private rickMortyService: RickMortyService) {}
+  constructor(private rickMortyService: RickMortyService) {
+    this.clickedFueraAside();
+  }
 
   toggle(): void {
     this.asideActive
@@ -46,5 +48,20 @@ export class MenuComponent {
 
   get asideActive(): boolean {
     return this.rickMortyService.isOpenAside$.getValue();
+  }
+
+  clickedFueraAside(): void {
+    window.addEventListener('click', (event) => {
+      const header = document.querySelector('.header');
+      const aside = document.querySelector('.aside');
+
+      if (
+        !(
+          header?.contains(event.target as Node) ||
+          aside?.contains(event.target as Node)
+        )
+      )
+        this.rickMortyService.disableAside();
+    });
   }
 }

@@ -1,40 +1,74 @@
-<section class="filter">
-  <h1 class="filter__title">Busca tu personaje preferido</h1>
-  <div class="filter__child">
-    <div class="group">
-      <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
-        <g>
-          <path
-            d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
-          ></path>
-        </g>
-      </svg>
-      <input placeholder="Search" type="search" class="input" />
+<div class="contain">
+  <section class="filter">
+    <h1 class="filter__title">Busca tu personaje preferido</h1>
+    <div class="filter__child">
+      <div class="group">
+        <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+          <g>
+            <path
+              d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+            ></path>
+          </g>
+        </svg>
+        <input placeholder="Search" type="search" class="input" />
+      </div>
+      <div class="filter__opt">
+        <button class="filter__button" (click)="viewFilter()">
+          Filtrar
+          <span class="material-symbols-outlined"> filter_alt </span>
+        </button>
+        <div
+          class="filter__popup"
+          [ngClass]="{ 'filter__popup--visible': !showFilter }"
+        >
+          <ul class="filter__list">
+            <li class="filter__item">
+              <input id="f1" type="checkbox" checked />
+              <label for="f1">Nombre</label>
+            </li>
+            <li class="filter__item">
+              <input id="f2" type="checkbox" />
+              <label for="f2">Estado</label>
+            </li>
+            <li class="filter__item">
+              <input id="f3" type="checkbox" />
+              <label for="f3">Especie</label>
+            </li>
+            <li class="filter__item">
+              <input id="f4" type="checkbox" />
+              <label for="f4">Tipo</label>
+            </li>
+            <li class="filter__item">
+              <input id="f5" type="checkbox" />
+              <label for="f5">Genero</label>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="filter__opt">filter</div>
-  </div>
-</section>
+  </section>
 
-<section class="cards">
-  <div class="flip-card" *ngFor="let item of cards; let i = index">
-    <div
-      class="flip-card-inner"
-      [title]="item.name"
-      (click)="detallePersonaje(i)"
-    >
-      <div class="flip-card-front">
-        <img
-          [src]="item.image"
-          [alt]="item.name"
-          loading="lazy"
-          class="flip-card-img"
-        />
-      </div>
-      <div class="flip-card-back">
-        <p class="title">{{ item.name }}</p>
-        <p>{{ item.species }}</p>
-        <p>{{ item.status | estado }}</p>
+  <section class="cards">
+    <div class="flip-card" *ngFor="let item of cards; let i = index">
+      <div
+        class="flip-card-inner"
+        [title]="item.name"
+        (click)="detallePersonaje(i)"
+      >
+        <div class="flip-card-front">
+          <img
+            [src]="item.image"
+            [alt]="item.name"
+            loading="lazy"
+            class="flip-card-img"
+          />
+        </div>
+        <div class="flip-card-back">
+          <p class="title">{{ item.name }}</p>
+          <p>{{ item.species }}</p>
+          <p>{{ item.status | estado }}</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>

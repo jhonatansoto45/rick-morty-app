@@ -16,10 +16,12 @@
   text-align: center;
   font-size: 900;
   font-size: 3em;
+  color: var(--background);
 }
 
 .filter__opt {
   flex: 1 1 auto;
+  position: relative;
 }
 
 .group {
@@ -67,8 +69,62 @@ input:hover {
   height: 1rem;
 }
 
-/* CARD*/
+//* FILTER
 
+
+.filter__popup {
+  background-color: #f3f3f4;
+  width: 150px;
+  height: 126px;
+  border-radius: 0 8px 8px;
+  position: absolute;
+  top: 42px;
+  left: 20%;
+  padding: 25px;
+  z-index: 2;
+}
+
+.filter__popup--visible {
+  display: none;
+}
+
+.filter__list {
+  list-style: none;
+}
+
+.filter__item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+
+  label {
+    font-size: 0.8rem;
+  }
+}
+
+
+.filter__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: #9e9ea7;
+  border-radius: 8px;
+  padding: 7px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  background-color: #f3f3f4;
+  transition: 0.3s ease;
+}
+
+.filter__button:hover {
+  border-color: rgba(104, 193, 26, 0.58);
+  color: #0d0c22;
+  background-color: #fff;
+}
+
+//* CARDS
 .cards {
   width: 90%;
   margin: 15px auto;
