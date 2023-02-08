@@ -24,7 +24,7 @@ const routes: Routes = [
         component: LocacionesComponent,
       },
       {
-        path: 'episodeos',
+        path: 'episodios',
         component: EpisodeosComponent,
       },
       {

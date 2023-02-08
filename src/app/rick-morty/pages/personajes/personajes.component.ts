@@ -26,7 +26,7 @@ export class PersonajesComponent implements OnInit {
   ngOnInit(): void {
     this.rmService.validateAside();
 
-    if (!this.dataSession.length) {
+    if (!this.dataSession?.length) {
       this.rmService.getCharacters().subscribe((data) => (this.cards = data));
     } else {
       this.cards = this.dataSession;

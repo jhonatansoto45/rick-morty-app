@@ -1,1 +1,16 @@
-<p>detalle-personaje works!</p>
+<section class="bio">
+  <picture class="bio__picture">
+    <img [src]="character.image" [alt]="character.name" class="bio__img" />
+  </picture>
+  <article class="bio__card">
+    <div class="bio__contain">
+      <h1 class="bio__title">{{ character.name }}</h1>
+      <p class="bio__description">Genero: {{ character.gender }}</p>
+      <p class="bio__description">Especie: {{ character.species }}</p>
+      <p class="bio__description">Origen: {{ character.origin.name }}</p>
+      <p class="bio__description">Ubicación: {{ character.location.name }}</p>
+    </div>
+    <!-- AGREGAR CARDS  DE EPISODIOS -->
+    <div class="bio__episodios"></div>
+  </article>
+</section>

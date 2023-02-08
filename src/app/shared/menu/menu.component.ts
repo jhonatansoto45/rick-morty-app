@@ -30,9 +30,9 @@ export class MenuComponent {
       ruta: './rick-morty/locaciones',
     },
     {
-      nombre: 'Episodeos',
+      nombre: 'Episodios',
       icono: 'star_rate',
-      ruta: './rick-morty/episodeos',
+      ruta: './rick-morty/episodios',
     },
   ];
 

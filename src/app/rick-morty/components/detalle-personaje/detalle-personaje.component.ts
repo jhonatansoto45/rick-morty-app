@@ -44,7 +44,6 @@ export class DetallePersonajeComponent implements OnInit {
     this.activatedRoute.params.subscribe(({ id }) => {
       if (this.personajes?.length) {
         this.character = this.personajes[id];
-        console.log(this.character);
       } else {
         this.cargarDatos(id);
       }
