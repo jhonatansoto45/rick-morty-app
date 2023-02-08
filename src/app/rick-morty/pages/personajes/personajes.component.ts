@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { debounceTime, Subject } from 'rxjs';
 import { RickMortyService } from '../../../service/rick-morty.service';
 import { Result } from '../../interface/rickmorty.interface';
 import { PersonajesModel } from './personajes.model';
@@ -15,6 +16,8 @@ export class PersonajesComponent implements OnInit {
   showFilter: boolean = false;
   filterMsg: string = '';
   busqueda: string = '';
+
+  debouncer$: Subject<string> = new Subject<string>();
 
   model: PersonajesModel = PersonajesModel.getInstance();
 
@@ -42,22 +45,22 @@ export class PersonajesComponent implements OnInit {
   }
 
   get placeholder(): string {
-    let msg: string = 'Buscar por ';
+    let msg: string = '';
     switch (this.filterMsg) {
       case 'name':
-        msg = msg.concat('nombre');
+        msg = msg.concat('Rick, Morty, Summer...');
         break;
       case 'status':
-        msg = msg.concat('estado');
+        msg = msg.concat('Alive, Dead...');
         break;
       case 'specie':
-        msg = msg.concat('especie');
+        msg = msg.concat('Human, Alien...');
         break;
       case 'type':
         msg = msg.concat('tipo');
         break;
       case 'gender':
-        msg = msg.concat('genero');
+        msg = msg.concat('Female, Male...');
         break;
     }
 
@@ -65,11 +68,14 @@ export class PersonajesComponent implements OnInit {
   }
 
   searchCharacter(): void {
-    this.rmService
-      .getCharacterById(this.filterMsg, this.busqueda)
-      .subscribe((data) => {
-        this.cards = data;
-      });
+    this.debouncer$.next(this.busqueda);
+    this.debouncer$.pipe(debounceTime(300)).subscribe((valor: string) => {
+      this.rmService
+        .getCharacterById(this.filterMsg, valor)
+        .subscribe((data) => {
+          this.cards = data;
+        });
+    });
   }
 
   viewFilter(): void {
