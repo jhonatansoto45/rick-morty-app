@@ -35,3 +35,23 @@
   font-weight: 900;
   color: var(--background);
 }
+
+.bio__data {
+  strong {
+    display: inline-block;
+    font-weight: 900;
+    color: var(--background);
+    min-width: 100px;
+  }
+}
+
+.bio__data--link {
+  color: rgb(5, 133, 109);
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+
+.bio__data--link:hover {
+  text-decoration: underline;
+}

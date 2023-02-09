@@ -41,21 +41,19 @@ export class DetallePersonajeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(({ id }) => {
-      if (this.personajes?.length) {
-        this.character = this.personajes[id];
-      } else {
-        this.cargarDatos(id);
-      }
-    });
+    let idCharacter: number = 0;
+    this.activatedRoute.params.subscribe(({ id }) => (idCharacter = id));
+
+    this.getCharacter(idCharacter);
   }
 
   get personajes() {
     return this.rmService.getSessionStorageCharacters;
   }
 
-  cargarDatos(id: number): void {
-    this.rmService.getCharacters();
-    this.character = this.personajes[id];
+  getCharacter(id: number): void {
+    this.rmService
+      .getCharacterById(id)
+      .subscribe((data) => (this.character = data));
   }
 }

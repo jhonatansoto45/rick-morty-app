@@ -5,10 +5,31 @@
   <article class="bio__card">
     <div class="bio__contain">
       <h1 class="bio__title">{{ character.name }}</h1>
-      <p class="bio__description">Genero: {{ character.gender }}</p>
-      <p class="bio__description">Especie: {{ character.species }}</p>
-      <p class="bio__description">Origen: {{ character.origin.name }}</p>
-      <p class="bio__description">Ubicación: {{ character.location.name }}</p>
+      <div class="bio__data">
+        <strong> Genero: </strong>
+        <span>
+          {{ character.gender }}
+        </span>
+      </div>
+      <div class="bio__data">
+        <strong> Especie: </strong>
+        <span>
+          {{ character.species }}
+        </span>
+      </div>
+      <!-- LOCACIONES -->
+      <div class="bio__data  bio__data--link">
+        <strong> Origen: </strong>
+        <span>
+          {{ character.origin.name }}
+        </span>
+      </div>
+      <div class="bio__data bio__data--link">
+        <strong> Ubicación: </strong>
+        <span>
+          {{ character.location.name }}
+        </span>
+      </div>
     </div>
     <!-- AGREGAR CARDS  DE EPISODIOS -->
     <div class="bio__episodios"></div>

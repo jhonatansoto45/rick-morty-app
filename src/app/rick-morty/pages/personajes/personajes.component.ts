@@ -71,7 +71,7 @@ export class PersonajesComponent implements OnInit {
     this.debouncer$.next(this.busqueda);
     this.debouncer$.pipe(debounceTime(300)).subscribe((valor: string) => {
       this.rmService
-        .getCharacterById(this.filterMsg, valor)
+        .getFilterCharacter(this.filterMsg, valor)
         .subscribe((data) => {
           this.cards = data;
         });
