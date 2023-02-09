@@ -1,1 +1,24 @@
-<p>episodeos works!</p>
+<div class="container">
+  <h1 class="container__title">Los episodios donde apareció</h1>
+
+  <div class="contain">
+    <div class="card">
+      <h2 class="card__title">Personaje</h2>
+      <picture class="card__picture">
+        <img [src]="character.image" [alt]="character.name" class="card__img" />
+      </picture>
+      <article class="card__info">
+        <h3 class="card__name">{{ character.name }}</h3>
+        <h4 class="card__text">Apariciones</h4>
+        <div class="card__episodios">
+          <strong>Total: </strong>
+          <span> {{ character.episode.length }} </span>
+        </div>
+      </article>
+    </div>
+
+    <section class="listado">
+      <article class="listado__contain">listado de episodios</article>
+    </section>
+  </div>
+</div>

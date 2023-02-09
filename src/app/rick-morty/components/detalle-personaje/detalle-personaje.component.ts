@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RickMortyService } from '../../../service/rick-morty.service';
 import {
   Gender,
@@ -7,6 +7,7 @@ import {
   Species,
   Status,
 } from '../../interface/rickmorty.interface';
+import { EpisodiosService } from '../../services/episodios.service';
 
 @Component({
   selector: 'app-detalle-personaje',
@@ -37,7 +38,9 @@ export class DetallePersonajeComponent implements OnInit {
 
   constructor(
     private rmService: RickMortyService,
-    private activatedRoute: ActivatedRoute
+    private episodioService: EpisodiosService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -55,5 +58,10 @@ export class DetallePersonajeComponent implements OnInit {
     this.rmService
       .getCharacterById(id)
       .subscribe((data) => (this.character = data));
+  }
+
+  verEpisodios(): void {
+    sessionStorage.setItem('currentCharacter', JSON.stringify(this.character));
+    this.router.navigate(['/rick-morty/episodios']);
   }
 }
